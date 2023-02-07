@@ -99,10 +99,16 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               ElevatedButton(
-                  onPressed: () {
-
-                  },
-                  child: const Text("Add New Counter")
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).buttonTheme.colorScheme?.background,
+                  minimumSize: const Size.fromHeight(40),
+                ),
+                onPressed: () {
+                  // TODO: impl
+                },
+                child: const Text(
+                  'Add New Counter'
+                ),
               ),
               const Counter(),
               const Text(
