@@ -23,6 +23,26 @@ class Counter extends StatelessWidget {
                 const Spacer(),
                 Text("Date", style: Theme.of(context).textTheme.headlineSmall)
               ],
+            ),
+            Row(
+              children: [
+                Column(
+                  children: [
+                    Text("Today"),
+                    Text("0"),
+                    Text("Total"),
+                    Text("0"),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text("108 x"),
+                    Text("0"),
+                    Text("Total"),
+                    Text("0"),
+                  ],
+                ),
+              ],
             )
           ],
         ),
