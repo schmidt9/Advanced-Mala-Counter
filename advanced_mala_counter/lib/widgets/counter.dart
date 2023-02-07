@@ -1,5 +1,5 @@
-import 'package:advanced_mala_counter/counter_data.dart';
-import 'package:advanced_mala_counter/cycle_helper.dart';
+import 'package:advanced_mala_counter/models/counter_data.dart';
+import 'package:advanced_mala_counter/helpers/cycle_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
