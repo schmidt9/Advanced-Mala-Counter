@@ -52,6 +52,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  final _counters = List.empty(growable: true);
 
   void _incrementCounter() {
     setState(() {
@@ -61,6 +62,17 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       _counter++;
+    });
+  }
+
+  void _addCounter() {
+    setState(() {
+      _counters.add(const CounterData(
+          counterName: 'Title',
+          counterDateTime: 'Date',
+          cycleLength: 0,
+          todayCount: 0,
+          totalCount: 0));
     });
   }
 
@@ -102,18 +114,24 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Theme.of(context).buttonTheme.colorScheme?.background,
+                  backgroundColor:
+                      Theme.of(context).buttonTheme.colorScheme?.background,
                   minimumSize: const Size.fromHeight(40),
                 ),
                 onPressed: () {
-                  // TODO: impl
+                  _addCounter();
                 },
-                child: const Text(
-                  'Add New Counter'
-                ),
+                child: const Text('Add New Counter'),
               ),
               const SizedBox(height: 16),
-              const Counter(counterData: CounterData(counterName: 'Title', counterDateTime: 'Date', cycleLength: 0, todayCount: 0, totalCount: 0)),
+              Table(
+                children: [
+                  for (final counterData in _counters)
+                    TableRow(children: [
+                      Counter(counterData: counterData),
+                    ])
+                ],
+              ),
               const Text(
                 'You have pushed the button this many times:',
               ),
