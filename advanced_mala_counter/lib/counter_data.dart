@@ -1,6 +1,6 @@
 class CounterData {
   final String counterName;
-  final DateTime counterDateTime;
+  final String counterDateTime;
   final int cycleLength;
   final int todayCount;
   final int totalCount;

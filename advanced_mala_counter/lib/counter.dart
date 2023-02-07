@@ -1,8 +1,12 @@
+import 'package:advanced_mala_counter/counter_data.dart';
+import 'package:advanced_mala_counter/cycle_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Counter extends StatelessWidget {
-  const Counter({super.key});
+  final CounterData counterData;
+
+  const Counter({super.key, required this.counterData});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class Counter extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Today"),
-                    Text("0 (108 x 0)"),
+                    Text("${counterData.todayCount} (${counterData.cycleLength} x ${CycleHelper.getCycles(counterData.todayCount, counterData.cycleLength)})"),
                   ],
                 ),
               ],
@@ -43,7 +47,7 @@ class Counter extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Total"),
-                    Text("0 (108 x 0)"),
+                    Text("${counterData.totalCount} (${counterData.cycleLength} x ${CycleHelper.getCycles(counterData.totalCount, counterData.cycleLength)})"),
                   ],
                 ),
               ],

@@ -1,5 +1,7 @@
-import 'package:advanced_mala_counter/Counter.dart';
+import 'package:advanced_mala_counter/counter.dart';
 import 'package:flutter/material.dart';
+
+import 'counter_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -111,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               const SizedBox(height: 16),
-              const Counter(),
+              const Counter(counterData: CounterData(counterName: 'Title', counterDateTime: 'Date', cycleLength: 0, todayCount: 0, totalCount: 0)),
               const Text(
                 'You have pushed the button this many times:',
               ),
