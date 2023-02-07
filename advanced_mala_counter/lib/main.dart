@@ -110,6 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   'Add New Counter'
                 ),
               ),
+              const SizedBox(height: 16),
               const Counter(),
               const Text(
                 'You have pushed the button this many times:',
