@@ -112,20 +112,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: const Text('Add New Counter'),
               ),
               const SizedBox(height: 16),
-              Table(
-                children: [
-                  for (final counterData in _counters)
-                    TableRow(children: [
+              Expanded(
+                child: ListView(
+                  children: [
+                    for (final counterData in _counters)
                       Counter(counterData: counterData),
-                    ])
-                ],
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton( // TODO: remove
-        onPressed: (){},
+      floatingActionButton: FloatingActionButton(
+        // TODO: remove
+        onPressed: () {},
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
