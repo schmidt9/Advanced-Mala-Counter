@@ -1,7 +1,7 @@
-import 'package:advanced_mala_counter/counter.dart';
+import 'package:advanced_mala_counter/widgets/counter.dart';
 import 'package:flutter/material.dart';
 
-import 'counter_data.dart';
+import 'models/counter_data.dart';
 
 void main() {
   runApp(const MyApp());
