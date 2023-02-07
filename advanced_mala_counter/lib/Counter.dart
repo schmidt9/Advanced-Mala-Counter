@@ -24,26 +24,30 @@ class Counter extends StatelessWidget {
                 Text("Date", style: Theme.of(context).textTheme.headlineSmall)
               ],
             ),
+            const SizedBox(height: 8),
             Row(
               children: [
                 Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text("Today"),
-                    Text("0"),
-                    Text("Total"),
-                    Text("0"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text("108 x"),
-                    Text("0"),
-                    Text("Total"),
-                    Text("0"),
+                    Text("0 (108 x 0)"),
                   ],
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Total"),
+                    Text("0 (108 x 0)"),
+                  ],
+                ),
+              ],
+            ),
           ],
         ),
       ),
