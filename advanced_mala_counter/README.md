@@ -15,6 +15,12 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-## Generate Firebase Auth credentials, because they are not included into repo (`google-services.json` and `GoogleService-Info.plist`)
+## Setup Firebase
+
+Generate Firebase Auth credentials, because they are not included into repo (`google-services.json` and `GoogleService-Info.plist`)
 https://firebase.google.com/docs/flutter/setup?platform=ios
 https://firebase.google.com/docs/auth/flutter/start
+
+## Credits
+
+Auth https://github.com/stolets-k-od/flutter_firebase_auth
