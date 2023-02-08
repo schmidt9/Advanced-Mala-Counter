@@ -1,14 +1,16 @@
 class CounterData {
-  final String counterName;
-  final String counterDateTime;
+  final int? id;
+  final String title;
+  final int created;
   final int cycleLength;
   final int todayCount;
   final int totalCount;
 
-  const CounterData(
-      {required this.counterName,
-      required this.counterDateTime,
+  const CounterData({
+      required this.title,
+      required this.created,
       required this.cycleLength,
       required this.todayCount,
-      required this.totalCount});
+      required this.totalCount,
+      this.id});
 }

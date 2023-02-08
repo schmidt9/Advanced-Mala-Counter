@@ -37,8 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
   void _addCounter() {
     setState(() {
       _counters.add(const CounterData(
-          counterName: 'Title',
-          counterDateTime: 'Date',
+          title: 'Title',
+          created: 0,
           cycleLength: 0,
           todayCount: 0,
           totalCount: 0));
