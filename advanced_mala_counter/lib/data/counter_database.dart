@@ -56,11 +56,11 @@ class CounterDatabase {
 
     // Convert the List<Map<String, dynamic> into a List<Dog>.
     return List.generate(maps.length, (i) {
-      return CounterData(
-        id: maps[i]['id'],
-        name: maps[i]['name'],
-        age: maps[i]['age'],
-      );
+      // return CounterData(
+      //   id: maps[i]['id'],
+      //   name: maps[i]['name'],
+      //   age: maps[i]['age'],
+      // );
     });
   }
 }
