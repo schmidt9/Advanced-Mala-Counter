@@ -1,9 +1,19 @@
-import 'package:advanced_mala_counter/widgets/counter.dart';
+import 'package:advanced_mala_counter/screens/home_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import 'models/counter_data.dart';
 
-void main() {
+// Firebase Авторизация - Сценарии:
+//    Войти - Почта / Пароль
+//    Личный кабинет
+//    Зарегистрироваться - Почта / Пароль два раза
+//        Подтвердить почту - Отправить письмо снова / Отменить
+//    Сбросить пароль - Почта
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -17,76 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Advanced Mala Counter'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  final _counters = List.empty(growable: true);
-
-  void _addCounter() {
-    setState(() {
-      _counters.add(const CounterData(
-          title: 'Title',
-          created: 0,
-          cycleLength: 0,
-          todayCount: 0,
-          totalCount: 0));
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Theme.of(context).buttonTheme.colorScheme?.background,
-                  minimumSize: const Size.fromHeight(40),
-                ),
-                onPressed: () {
-                  _addCounter();
-                },
-                child: const Text('Add New Counter'),
-              ),
-              const SizedBox(height: 16),
-              Expanded(
-                child: ListView(
-                  children: [
-                    for (final counterData in _counters)
-                      Counter(counterData: counterData),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // TODO: remove
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+      home: const HomeScreen(title: 'Advanced Mala Counter'),
     );
   }
 }
