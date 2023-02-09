@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
-                  Theme.of(context).buttonTheme.colorScheme?.background,
+                  Theme.of(context).buttonTheme.colorScheme?.primary,
                   minimumSize: const Size.fromHeight(40),
                 ),
                 onPressed: () {
@@ -87,12 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        // TODO: remove
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
