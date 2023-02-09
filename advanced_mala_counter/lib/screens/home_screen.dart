@@ -1,3 +1,4 @@
+import 'package:advanced_mala_counter/data/counter_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../models/counter_data.dart';
@@ -18,12 +19,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _addCounter() {
     setState(() {
-      _counters.add(const CounterData(
+      final counterData = CounterData(
           title: 'Title',
-          created: 0,
-          cycleLength: 0,
+          created: DateTime.now().microsecondsSinceEpoch,
+          cycleLength: 108,
           todayCount: 0,
-          totalCount: 0));
+          totalCount: 0);
+
+      _counters.add(counterData);
+
+      CounterDatabase.addCounter(counterData);
     });
   }
 
