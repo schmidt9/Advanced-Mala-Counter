@@ -28,11 +28,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Advanced Mala Counter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
       routes: {
         '/': (context) => const FirebaseStream(),
         '/home': (context) => const HomeScreen(),

@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../models/counter_data.dart';
 import '../widgets/counter.dart';
+import 'account_screen.dart';
+import 'login_screen.dart';
 
+/// https://github.com/stolets-k-od/flutter_firebase_auth/blob/main/lib/screens/home_screen.dart
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -25,9 +29,34 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final user = FirebaseAuth.instance.currentUser;
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Advanced Mala Counter"),
+        title: const Text('Advanced Mala Counter'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              if ((user == null)) {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AccountScreen()),
+                );
+              }
+            },
+            icon: Icon(
+              Icons.person,
+              color: (user == null) ? Colors.white : Colors.yellow,
+            ),
+          ),
+        ],
       ),
       body: Center(
         child: Padding(
