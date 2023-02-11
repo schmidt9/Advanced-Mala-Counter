@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '401906833316',
     projectId: 'advanced-mala-counter',
     storageBucket: 'advanced-mala-counter.appspot.com',
+    androidClientId: '401906833316-mbacadpjhtbumt3e2iv22qjnk6ri796s.apps.googleusercontent.com',
     iosClientId: '401906833316-p7shh3a2q5r8qlvrtd2qa0addf611rjs.apps.googleusercontent.com',
     iosBundleId: 'ru.ankorm.advancedMalaCounter',
   );
