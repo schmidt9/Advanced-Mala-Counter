@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       _counters.add(counterData);
 
-      CounterDatabase.addCounter(counterData);
+      CounterDatabase.addCounter(counterData, null); // TODO: fix user
     });
   }
 
