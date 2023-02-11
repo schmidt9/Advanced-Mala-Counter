@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../models/counter_data.dart';
 import '../widgets/counter.dart';
-import 'account_screen.dart';
-import 'login_screen.dart';
+import 'user_info_screen.dart';
+import 'sign_in_screen.dart';
 
 /// https://github.com/stolets-k-od/flutter_firebase_auth/blob/main/lib/screens/home_screen.dart
 class HomeScreen extends StatefulWidget {
@@ -46,13 +46,13 @@ class _HomeScreenState extends State<HomeScreen> {
               if ((user == null)) {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const LoginScreen()),
+                  MaterialPageRoute(builder: (context) => const SignInScreen()),
                 );
               } else {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const AccountScreen()),
+                      builder: (context) => UserInfoScreen(user: user)),
                 );
               }
             },

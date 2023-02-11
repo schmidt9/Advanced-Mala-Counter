@@ -1,10 +1,8 @@
-import 'package:advanced_mala_counter/screens/account_screen.dart';
+import 'package:advanced_mala_counter/screens/user_info_screen.dart';
 import 'package:advanced_mala_counter/screens/home_screen.dart';
-import 'package:advanced_mala_counter/screens/login_screen.dart';
-import 'package:advanced_mala_counter/screens/reset_password_screen.dart';
-import 'package:advanced_mala_counter/screens/signup_screen.dart';
-import 'package:advanced_mala_counter/screens/verify_email_screen.dart';
+import 'package:advanced_mala_counter/screens/sign_in_screen.dart';
 import 'package:advanced_mala_counter/services/firebase_stream.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +25,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    final user = FirebaseAuth.instance.currentUser;
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Advanced Mala Counter',
@@ -36,11 +37,8 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => const FirebaseStream(),
         '/home': (context) => const HomeScreen(),
-        '/account': (context) => const AccountScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/signup': (context) => const SignUpScreen(),
-        '/reset_password': (context) => const ResetPasswordScreen(),
-        '/verify_email': (context) => const VerifyEmailScreen(),
+        '/account': (context) => UserInfoScreen(user: user!), // TODO: check
+        '/login': (context) => const SignInScreen()
       },
       initialRoute: '/',
     );

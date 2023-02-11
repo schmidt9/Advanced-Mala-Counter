@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
-import '../screens/verify_email_screen.dart';
 
 /// https://github.com/stolets-k-od/flutter_firebase_auth/blob/main/lib/services/firebase_streem.dart
-class FirebaseStream extends StatelessWidget {
+class FirebaseStream extends StatelessWidget { // TODO: fix
   const FirebaseStream({super.key});
 
   @override
@@ -17,7 +16,7 @@ class FirebaseStream extends StatelessWidget {
               body: Center(child: Text('Что-то пошло не так!')));
         } else if (snapshot.hasData) {
           if (!snapshot.data!.emailVerified) {
-            return const VerifyEmailScreen();
+            // return const VerifyEmailScreen();
           }
           return const HomeScreen();
         } else {
