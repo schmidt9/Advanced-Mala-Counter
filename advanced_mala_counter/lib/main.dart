@@ -6,14 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-// Firebase Авторизация - Сценарии:
-//    Войти - Почта / Пароль
-//    Личный кабинет
-//    Зарегистрироваться - Почта / Пароль два раза
-//        Подтвердить почту - Отправить письмо снова / Отменить
-//    Сбросить пароль - Почта
 /// https://github.com/stolets-k-od/flutter_firebase_auth/blob/main/lib/main.dart
-///
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -35,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => const FirebaseStream(),
+        '/': (context) => const SignInScreen(), // TODO: fix
         '/home': (context) => const HomeScreen(),
         '/account': (context) => UserInfoScreen(user: user!), // TODO: check
         '/login': (context) => const SignInScreen()

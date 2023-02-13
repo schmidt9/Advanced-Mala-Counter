@@ -1,6 +1,10 @@
 # Uncomment this line to define a global platform for your project
 # platform :ios, '11.0'
 
+# fix for CocoaPods could not find compatible versions for pod "GTMSessionFetcher/Core"
+# https://stackoverflow.com/a/74310601/3004003
+$FirebaseSDKVersion = '9.6.0'
+
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
