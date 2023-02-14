@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         '/account': (context) => UserInfoScreen(user: user!), // TODO: check
         '/login': (context) => const SignInScreen()
       },
-      initialRoute: '/',
+      initialRoute: '/home',
     );
   }
 }
