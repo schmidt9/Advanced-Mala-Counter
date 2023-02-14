@@ -41,25 +41,36 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Advanced Mala Counter'),
         actions: [
-          IconButton(
-            onPressed: () {
-              if ((user == null)) {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const SignInScreen()),
-                );
-              } else {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => UserInfoScreen(user: user)),
-                );
-              }
-            },
+          PopupMenuButton(
             icon: Icon(
-              Icons.person,
+              Icons.menu,
               color: (user == null) ? Colors.white : Colors.yellow,
             ),
+            onSelected: (value) {
+              switch (value) {
+                case "/add_new_counter":
+                  //
+                  break;
+                case "/backup_and_restore":
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SignInScreen()),
+                  );
+                  break;
+              }
+            },
+            itemBuilder: (BuildContext bc) {
+              return const [
+                PopupMenuItem(
+                  value: '/add_new_counter',
+                  child: Text("Add New Counter"),
+                ),
+                PopupMenuItem(
+                  value: '/backup_and_restore',
+                  child: Text("Backup and Restore"),
+                ),
+              ];
+            },
           ),
         ],
       ),
