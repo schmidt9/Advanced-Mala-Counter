@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           PopupMenuButton(
             icon: Icon(
-              Icons.menu,
+              Icons.more_vert,
               color: (user == null) ? Colors.white : Colors.yellow,
             ),
             onSelected: (value) {

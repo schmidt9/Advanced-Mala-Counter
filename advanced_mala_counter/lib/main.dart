@@ -28,8 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routes: {
-        '/': (context) => const SignInScreen(), // TODO: fix
-        '/home': (context) => const HomeScreen(),
+        '/home': (context) => const HomeScreen(), // TODO: fix
         '/account': (context) => UserInfoScreen(user: user!), // TODO: check
         '/login': (context) => const SignInScreen()
       },

@@ -14,6 +14,9 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Sign In"),
+      ),
       backgroundColor: CustomColors.firebaseNavy,
       body: SafeArea(
         child: Padding(
