@@ -33,20 +33,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const SizedBox(height: 20),
+                  children: const [
+                    SizedBox(height: 20),
                     Text(
-                      'FlutterFire',
+                      'Sign in to save data',
                       style: TextStyle(
-                        color: CustomColors.firebaseYellow,
-                        fontSize: 40,
-                      ),
-                    ),
-                    Text(
-                      'Authentication',
-                      style: TextStyle(
-                        color: CustomColors.firebaseOrange,
-                        fontSize: 40,
+                        color: Colors.white,
                       ),
                     ),
                   ],

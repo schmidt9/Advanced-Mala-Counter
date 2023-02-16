@@ -13,7 +13,7 @@ class UserInfoScreen extends StatefulWidget {
   final User _user;
 
   @override
-  _UserInfoScreenState createState() => _UserInfoScreenState();
+  State<UserInfoScreen> createState() => _UserInfoScreenState();
 }
 
 class _UserInfoScreenState extends State<UserInfoScreen> {
